@@ -1,0 +1,19 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="assets/Scripts/Camera Scripts/CameraFollow.cs">
+    <Files>
+      <File FileName="Assets/LearnThrow.cs" Line="30" Column="4" />
+      <File FileName="Assets/Scripts/LittleTutorial.cs" Line="81" Column="31" />
+      <File FileName="Assets/Scripts/Player Controllers/Slinky.cs" Line="43" Column="19" />
+      <File FileName="Assets/Scripts/Tutorial/PacingCounter.cs" Line="30" Column="5" />
+      <File FileName="Assets/Scripts/Tutorial/IntroCameraScript.cs" Line="92" Column="29" />
+      <File FileName="Assets/Scripts/Player Controllers/Sam.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Destroyer.cs" Line="1" Column="1" />
+      <File FileName="assets/Scripts/Camera Scripts/CameraFollow.cs" Line="44" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

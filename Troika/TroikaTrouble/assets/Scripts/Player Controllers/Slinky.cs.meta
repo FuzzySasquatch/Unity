@@ -1,0 +1,12 @@
+fileFormatVersion: 2
+guid: bfe1ad8e220439749b466cf836d3231e
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - RenderingCamera: {instanceID: 0}
+  - friend: {instanceID: 0}
+  - big: {instanceID: 0}
+  - clinkSound: {fileID: 8300000, guid: 7eeab2ce5af966f488322cd3140e2919, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

@@ -1,0 +1,14 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="assets/Scripts/LaserPush.cs">
+    <Files>
+      <File FileName="assets/Scripts/Player Controllers/Slinky.cs" Line="1" Column="1" />
+      <File FileName="assets/Scripts/LaserPush.cs" Line="9" Column="33" />
+      <File FileName="assets/Scripts/Player Controllers/Sam.cs" Line="104" Column="17" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
