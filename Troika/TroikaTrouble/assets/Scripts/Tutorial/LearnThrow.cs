@@ -8,6 +8,8 @@ public class LearnThrow : MonoBehaviour {
 	public GameObject moveLeft;
 	public GameObject throwRight;
 
+	public GameObject moveRight;
+
 	public GameObject terminal;
 
 	public LittleTutorial sam;
@@ -27,6 +29,7 @@ public class LearnThrow : MonoBehaviour {
 //			print("pickup");
 //		}
 		if (terminal.activeInHierarchy && throwRight.activeInHierarchy) {
+			if (moveWithTerminal) moveWithTerminal.SetActive(false); // added this
 			throwRight.SetActive(false);
 			sam.moveRight.SetActive(true);
 			sam.moveNHack = true;
@@ -40,8 +43,11 @@ public class LearnThrow : MonoBehaviour {
 	public void TerminalGrabbed() {
 		Destroy(moveLeft);
 		Destroy(pickUp);//.SetActive(false);
-		moveWithTerminal.SetActive(true);
-		if (gameObject.collider2D)
+
+		if (moveRight) moveRight.SetActive(false);
+
+		if (moveWithTerminal) moveWithTerminal.SetActive(true);
+		if (gameObject.GetComponent<Collider2D>())
 			this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
 	}
 
@@ -53,7 +59,7 @@ public class LearnThrow : MonoBehaviour {
 			if (pickUp) pickUp.SetActive(true);
 			Destroy(moveLeft);//.SetActive(false);
 
-			Destroy(this.gameObject.collider2D);
+			Destroy(this.gameObject.GetComponent<Collider2D>());
 
 		}
 
@@ -65,6 +71,6 @@ public class LearnThrow : MonoBehaviour {
 	}
 
 	public void TerminalGrabbedEarly() {
-		Destroy(this.gameObject.collider2D);
+		Destroy(this.gameObject.GetComponent<Collider2D>());
 	}
 }

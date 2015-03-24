@@ -1,0 +1,103 @@
+-debug
+-target:library
+-nowarn:0169
+-out:'Temp/Assembly-CSharp.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEngine.dll'
+-r:'Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll'
+-r:'Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll'
+-r:'/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
+-r:'/Applications/Unity/Unity.app/Contents/PlaybackEngines/iossupport/UnityEditor.iOS.Extensions.Xcode.dll'
+-define:UNITY_5_0_0
+-define:UNITY_5_0
+-define:UNITY_5
+-define:ENABLE_LICENSE_RENAME
+-define:ENABLE_NEW_BUGREPORTER
+-define:ENABLE_2D_PHYSICS
+-define:ENABLE_4_6_FEATURES
+-define:ENABLE_AUDIO
+-define:ENABLE_CACHING
+-define:ENABLE_CLOTH
+-define:ENABLE_DUCK_TYPING
+-define:ENABLE_FRAME_DEBUGGER
+-define:ENABLE_GENERICS
+-define:ENABLE_HOME_SCREEN
+-define:ENABLE_IMAGEEFFECTS
+-define:ENABLE_LIGHT_PROBES_LEGACY
+-define:ENABLE_MICROPHONE
+-define:ENABLE_MULTIPLE_DISPLAYS
+-define:ENABLE_NEW_HIERARCHY
+-define:ENABLE_PHYSICS
+-define:ENABLE_PHYSICS_PHYSX3
+-define:ENABLE_PLUGIN_INSPECTOR
+-define:ENABLE_SHADOWS
+-define:ENABLE_SINGLE_INSTANCE_BUILD_SETTING
+-define:ENABLE_SPRITES
+-define:ENABLE_TERRAIN
+-define:ENABLE_UNITYEVENTS
+-define:ENABLE_WEBCAM
+-define:ENABLE_WWW
+-define:ENABLE_AUDIOMIXER_SUSPEND
+-define:ENABLE_NONPRO
+-define:INCLUDE_DYNAMIC_GI
+-define:INCLUDE_GI
+-define:INCLUDE_IL2CPP
+-define:PLATFORM_SUPPORTS_MONO
+-define:RENDER_SOFTWARE_CURSOR
+-define:UNITY_STANDALONE_OSX
+-define:UNITY_STANDALONE
+-define:ENABLE_SUBSTANCE
+-define:ENABLE_GAMECENTER
+-define:ENABLE_TEXTUREID_MAP
+-define:ENABLE_RUNTIME_GI
+-define:ENABLE_MOVIES
+-define:ENABLE_NETWORK
+-define:ENABLE_MONO
+-define:ENABLE_PROFILER
+-define:UNITY_EDITOR
+-define:UNITY_EDITOR_64
+-define:UNITY_EDITOR_OSX
+'assets/OnTargetStay.cs'
+'assets/Scripts/Camera Scripts/CameraFollow.cs'
+'assets/Scripts/Camera Scripts/CameraFollow2.cs'
+'assets/Scripts/Camera Scripts/ParallaxEffect.cs'
+'assets/Scripts/Camera Scripts/Vector3.cs'
+'assets/Scripts/Layers/IgnoreCollisions.cs'
+'assets/Scripts/Layers/SetParticleEmissionRate.cs'
+'assets/Scripts/Layers/SetParticleSortingLayer.cs'
+'assets/Scripts/Layers/SortingLayerScript.cs'
+'assets/Scripts/Layers/ToggleIgnoreBig.cs'
+'assets/Scripts/Layers/ToggleIgnoreColl.cs'
+'assets/Scripts/Level Scripts/CheckPoint.cs'
+'assets/Scripts/Level Scripts/CheckPointControl.cs'
+'assets/Scripts/Level Scripts/Console.cs'
+'assets/Scripts/Level Scripts/Destroyer.cs'
+'assets/Scripts/Level Scripts/ExitLevel.cs'
+'assets/Scripts/Level Scripts/LaserPush.cs'
+'assets/Scripts/Level Scripts/LevelControl.cs'
+'assets/Scripts/Level Scripts/MenuScript.cs'
+'assets/Scripts/Level Scripts/SoundEffectsHelper.cs'
+'assets/Scripts/Level Scripts/WallScript.cs'
+'assets/Scripts/Player Controllers/BigArmsController.cs'
+'assets/Scripts/Player Controllers/BigController.cs'
+'assets/Scripts/Player Controllers/Cursor.cs'
+'assets/Scripts/Player Controllers/HackWall.cs'
+'assets/Scripts/Player Controllers/IgnoreCollison.cs'
+'assets/Scripts/Player Controllers/RotateInPlace.cs'
+'assets/Scripts/Player Controllers/Sam.cs'
+'assets/Scripts/Player Controllers/SizeCheck.cs'
+'assets/Scripts/Player Controllers/Slinky.cs'
+'assets/Scripts/Player Controllers/Tether.cs'
+'assets/Scripts/Tutorial/ConsoleIntro.cs'
+'assets/Scripts/Tutorial/IntroCameraScript.cs'
+'assets/Scripts/Tutorial/Lap.cs'
+'assets/Scripts/Tutorial/LapCounter.cs'
+'assets/Scripts/Tutorial/LearnThrow.cs'
+'assets/Scripts/Tutorial/LittleTutorial.cs'
+'assets/Scripts/Tutorial/OnTargetEnter.cs'
+'assets/Scripts/Tutorial/PacingCounter.cs'
+'assets/Scripts/Tutorial/SlinkTutorial.cs'
+'assets/SlinkTutorialTwo.cs'
+'assets/TargetCollision.cs'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
+-r:'/Applications/Unity/Unity.app/Contents/Frameworks/Mono/lib/mono/unity/System.Xml.Linq.dll'

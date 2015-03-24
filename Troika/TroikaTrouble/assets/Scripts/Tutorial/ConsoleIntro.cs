@@ -31,14 +31,14 @@ public class ConsoleIntro : MonoBehaviour
 		yield return new WaitForSeconds(4.0f);
 
 		objectToDisable.SetActive(false);
-		this.rigidbody2D.isKinematic = false;
-		Destroy(this.gameObject.collider2D);
+		this.GetComponent<Rigidbody2D>().isKinematic = false;
+		Destroy(this.gameObject.GetComponent<Collider2D>());
 		this.gameObject.GetComponent<ToggleIgnoreColl>().enabled = true;
 
 		AudioSource.PlayClipAtPoint(floorSwitchSound, transform.position);
 		//		SoundEffectsHelper.Instance.MakeLaserSound(); // change this
 		yield return new WaitForSeconds(hackSeconds);
-		this.collider2D.enabled = true;
+		this.GetComponent<Collider2D>().enabled = true;
 		Destroy(this);
 //		this.gameObject.GetComponent<BoxCollider2D>().enabled = true;
 

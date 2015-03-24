@@ -7,8 +7,8 @@ public class Tether : MonoBehaviour {
 	public Slinky h2;
 
 	void FixedUpdate () {
-		Vector2 p1 = h1.rigidbody2D.position;
-		Vector2 p2 = h2.rigidbody2D.position;
+		Vector2 p1 = h1.GetComponent<Rigidbody2D>().position;
+		Vector2 p2 = h2.GetComponent<Rigidbody2D>().position;
 
 		this.transform.position = (p1 + p2) / 2;
 

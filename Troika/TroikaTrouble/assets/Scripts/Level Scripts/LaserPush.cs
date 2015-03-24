@@ -3,6 +3,7 @@ using System.Collections;
 
 public class LaserPush : MonoBehaviour {
 
+	public BigArmsController control;
 	public GameObject sam, big;
 	private GameObject samDust, bigDust;
 	public AudioClip buzzSound;
@@ -19,17 +20,24 @@ public class LaserPush : MonoBehaviour {
 		if (other.tag == "Sam" || other.tag == "Biggie")
 		{
 				Vector3 pos = other.gameObject.transform.position;
-				Vector2 vel = other.gameObject.rigidbody2D.velocity;
+				Vector2 vel = other.gameObject.GetComponent<Rigidbody2D>().velocity;
 				other.gameObject.SetActive(false);
 
 			if (other.tag == "Sam") {
-				other.gameObject.GetComponent<Sam>().stop = true;
+//				other.gameObject.GetComponent<Sam>().stop = true;
 				samDust = (GameObject) Instantiate(sam, pos, Quaternion.identity); 
-				samDust.rigidbody2D.velocity = vel;
+				samDust.GetComponent<Rigidbody2D>().velocity = vel;
+				other.gameObject.GetComponent<Sam>().stop = true;
 			} else {
-//				other.gameObject.GetComponent<>().stop = true;
+				// Disable raging
+				if (control.raging) {
+					control.raging = false;
+					control.rageHead.GetComponent<Renderer>().enabled = false;
+					control.regHead.GetComponent<Renderer>().enabled = true;
+					control.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
+				}
 				bigDust = (GameObject) Instantiate(big, pos, Quaternion.identity); 
-				bigDust.rigidbody2D.velocity = vel;
+				bigDust.GetComponent<Rigidbody2D>().velocity = vel;
 			}
 //			yield return new WaitForSeconds(0.1f);
 //			samDust.collider2D.isTrigger = false;

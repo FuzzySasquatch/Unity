@@ -18,7 +18,7 @@ public class PacingCounter : MonoBehaviour {
 		if (other.gameObject.tag == "Biggie") 
 		{
 			// destroys the left counter
-			Destroy(this.gameObject.collider2D);
+			Destroy(this.gameObject.GetComponent<Collider2D>());
 			if (count < paceCount)
 			{
 				// changes the animation

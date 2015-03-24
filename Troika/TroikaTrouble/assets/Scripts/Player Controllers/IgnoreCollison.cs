@@ -11,13 +11,13 @@ public class IgnoreCollison : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Sam" || other.gameObject.tag == "Biggie" || other.gameObject.tag == "Dust")
 		{
-			Physics2D.IgnoreCollision(other.transform.collider2D, this.transform.collider2D);
+			Physics2D.IgnoreCollision(other.transform.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>());
 			objToIgnore = other.transform;
 		}
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
-		Physics2D.IgnoreCollision(objToIgnore.transform.collider2D, this.transform.collider2D);
+		Physics2D.IgnoreCollision(objToIgnore.transform.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>());
 	}
 }

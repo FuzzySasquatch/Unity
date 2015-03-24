@@ -86,7 +86,7 @@ public class LittleTutorial : MonoBehaviour {
 
 		if (typedLeft && moveLeft) {
 			moveRight.SetActive(false);
-			Destroy(moveLeft);
+			if (moveLeft) Destroy(moveLeft);
 //			moveLeft.SetActive(false);
 			if (stop) stop.SetActive(true);
 			// move sam right and left
@@ -107,8 +107,13 @@ public class LittleTutorial : MonoBehaviour {
 		}
 
 		if (typedTaunt) {
-			big.transform.position = new Vector2(-9.0f, big.transform.position.y);
-			Destroy(moveLeft);
+			// MOVE BIG
+//			big.transform.position = new Vector2(-9.0f, big.transform.position.y);
+
+			pacing = false;
+			sam.stop = true;
+
+			if(moveLeft) Destroy(moveLeft);
 			moveRight.SetActive(false);//Destroy(moveRight);
 			Destroy(stop);
 			taunt.SetActive(false);

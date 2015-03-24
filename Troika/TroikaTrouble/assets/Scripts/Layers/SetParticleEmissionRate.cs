@@ -9,11 +9,11 @@ public class SetParticleEmissionRate : MonoBehaviour {
 	void FixedUpdate()
 	{
 
-		print(sam.rigidbody2D.velocity);
+		print(sam.GetComponent<Rigidbody2D>().velocity);
 		moving = sam.GetComponent<Sam>().moving;
 		if (moving)
-			particleSystem.emissionRate = 40f;
+			GetComponent<ParticleSystem>().emissionRate = 40f;
 		else
-			particleSystem.emissionRate = 12f;
+			GetComponent<ParticleSystem>().emissionRate = 12f;
 	}
 }

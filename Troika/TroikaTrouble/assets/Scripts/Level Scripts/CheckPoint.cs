@@ -15,7 +15,7 @@ public class CheckPoint : MonoBehaviour {
 	void Update () 
 	{
 		checkPoint = sam && slink && biggie;
-		print(checkPoint);
+//		print(checkPoint);
 
 		if (checkPoint)
 		{

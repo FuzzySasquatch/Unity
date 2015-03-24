@@ -12,6 +12,8 @@ public class BigArmsController : MonoBehaviour {
 	private bool grab = false;			// determines if Big is holding something
 	public float wait = 0.02f;			// how often Big fails his arms during rage mode
 
+	public AudioClip groan;
+
 
 	private Vector2 centerHands;		// position between the center of big's hands
 
@@ -23,7 +25,7 @@ public class BigArmsController : MonoBehaviour {
 
 	void Start()
 	{
-		Physics2D.IgnoreCollision(transform.parent.transform.collider2D, this.transform.collider2D);
+		Physics2D.IgnoreCollision(transform.parent.transform.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>());
 	}
 
 	void Update() 
@@ -36,7 +38,7 @@ public class BigArmsController : MonoBehaviour {
 		// must hold grab to initiate rotating of arms
 		if (grab) 
 		{
-			this.collider2D.enabled = true;
+			this.GetComponent<Collider2D>().enabled = true;
 			// gets inputs for right joystick
 			float x = Input.GetAxis("Rotate Horz");
 			float y = -1 * Input.GetAxis("Rotate Vert");
@@ -56,7 +58,7 @@ public class BigArmsController : MonoBehaviour {
 		} 
 		else 
 		{
-			this.collider2D.enabled = false;
+			this.GetComponent<Collider2D>().enabled = false;
 			// fetches inputs for throwing
 			float x = Input.GetAxis("Rotate Horz");
 			float y = -1 * Input.GetAxis("Rotate Vert");
@@ -65,9 +67,9 @@ public class BigArmsController : MonoBehaviour {
 			{
 
 				if (child.tag == "Sam" || child.tag == "Terminal") { // disable unparents object, reapplies gravity, and applies a force
-					child.gameObject.rigidbody2D.isKinematic = false;
+					child.gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
 					child.parent = null;
-					child.gameObject.rigidbody2D.AddForce((new Vector2(x, y)) * force);
+					child.gameObject.GetComponent<Rigidbody2D>().AddForce((new Vector2(x, y)) * force);
 					child.gameObject.transform.rotation = Quaternion.identity;
 					AudioSource.PlayClipAtPoint(throwSound, transform.position);
 //					SoundEffectsHelper.Instance.MakeGruntSound(); // may change this...
@@ -99,7 +101,7 @@ public class BigArmsController : MonoBehaviour {
 				other.gameObject.GetComponent<Sam>().stop = true;
 			other.gameObject.transform.position = centerHands;
 			other.gameObject.transform.parent = this.transform;
-			other.gameObject.rigidbody2D.isKinematic = true;
+			other.gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 
 			if (other.gameObject.tag == "Terminal" && !terminalGrabbed) 
 			{
@@ -117,18 +119,19 @@ public class BigArmsController : MonoBehaviour {
 	
 	IEnumerator Rage()
 	{
+//		AudioSource.PlayClipAtPoint(groan, transform.position);
 		// changes Big's head and state to rage
 		raging = true;
 		taunted = true;
-		rageHead.renderer.enabled = true;
-		regHead.renderer.enabled = false;
+		rageHead.GetComponent<Renderer>().enabled = true;
+		regHead.GetComponent<Renderer>().enabled = false;
 		// Big begins failing arms
 		StartCoroutine(CrazyArms());
 		yield return new WaitForSeconds(rageDuration);
 		// disables raging and renables regular head
 		raging = false;
-		rageHead.renderer.enabled = false;
-		regHead.renderer.enabled = true;
+		rageHead.GetComponent<Renderer>().enabled = false;
+		regHead.GetComponent<Renderer>().enabled = true;
 		transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 	}
 

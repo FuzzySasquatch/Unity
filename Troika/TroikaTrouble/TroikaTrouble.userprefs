@@ -1,13 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="assets/Scripts/Level Scripts/LaserPush.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player Controllers/Slinky.cs" Line="43" Column="19" />
-      <File FileName="Assets/Scripts/Tutorial/PacingCounter.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Tutorial/IntroCameraScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Player Controllers/Sam.cs" Line="1" Column="1" />
-      <File FileName="assets/Scripts/Level Scripts/LaserPush.cs" Line="7" Column="38" />
-      <File FileName="assets/Scripts/Level Scripts/CheckPoint.cs" Line="18" Column="1" />
+      <File FileName="assets/Scripts/Player Controllers/BigController.cs" Line="22" Column="8" />
+      <File FileName="assets/SlinkTutorialTwo.cs" Line="19" Column="36" />
+      <File FileName="assets/Scripts/Tutorial/LearnThrow.cs" Line="49" Column="25" />
+      <File FileName="assets/Scripts/Level Scripts/LaserPush.cs" Line="30" Column="54" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

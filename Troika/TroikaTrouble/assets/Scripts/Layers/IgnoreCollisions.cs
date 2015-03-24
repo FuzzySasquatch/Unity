@@ -7,6 +7,6 @@ public class IgnoreCollisions : MonoBehaviour {
 
 	void FixedUpdate () 
 	{
-		Physics2D.IgnoreCollision(other1.collider2D, this.transform.collider2D);
+		Physics2D.IgnoreCollision(other1.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>());
 	}
 }

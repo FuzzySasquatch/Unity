@@ -16,7 +16,7 @@ public class CameraFollow2 : MonoBehaviour
 	
 	void Start ()
 	{
-		this.camera.orthographicSize = 5.0f;
+		this.GetComponent<Camera>().orthographicSize = 5.0f;
 		//		this.InitialOrthographicSize = this.camera.orthographicSize;
 		this.TargetCameraPosition = new Vector3(-2.39f, 11.96f, -10f);//this.transform.position;
 	}
@@ -32,7 +32,7 @@ public class CameraFollow2 : MonoBehaviour
 	void OnPreCull ()
 	{
 		float lerpFactor = Time.deltaTime * this.FollowLerpFactor;
-		this.camera.transform.position = Vector3.Lerp(this.camera.transform.position, this.TargetCameraPosition, lerpFactor);
+		this.GetComponent<Camera>().transform.position = Vector3.Lerp(this.GetComponent<Camera>().transform.position, this.TargetCameraPosition, lerpFactor);
 		//		this.camera.orthographicSize = Mathf.Lerp (this.camera.orthographicSize, this.TargetCameraOrthographicSize, lerpFactor);
 	}
 	

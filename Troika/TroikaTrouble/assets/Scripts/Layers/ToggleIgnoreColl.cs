@@ -15,13 +15,13 @@ public class ToggleIgnoreColl : MonoBehaviour {
 		{
 			ignore = false;
 			ignores = 0;
-			Physics2D.IgnoreCollision(other1.collider2D, this.transform.collider2D, false);
-			Physics2D.IgnoreCollision(other2.collider2D, this.transform.collider2D, false);
+			Physics2D.IgnoreCollision(other1.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>(), false);
+			Physics2D.IgnoreCollision(other2.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>(), false);
 		}
 		// ignores collisions between these objects
 		if (ignore) {
-			Physics2D.IgnoreCollision(other1.collider2D, this.transform.collider2D);
-			Physics2D.IgnoreCollision(other2.collider2D, this.transform.collider2D);
+			Physics2D.IgnoreCollision(other1.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>());
+			Physics2D.IgnoreCollision(other2.GetComponent<Collider2D>(), this.transform.GetComponent<Collider2D>());
 		}
 	}
 }

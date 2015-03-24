@@ -17,7 +17,8 @@ public class IntroCameraScript : MonoBehaviour {
 	public PacingCounter counter;
 	public int countLimit;
 
-	public Lap wall1, wall2, wall3, wall4;
+//	public Lap wall1, wall2, wall3, wall4;
+	public SlinkTutorial slink;
 
 	public BigArmsController bigHasBeen;
 
@@ -25,6 +26,7 @@ public class IntroCameraScript : MonoBehaviour {
 
 	public GameObject samTutorial;
 	public GameObject learnThrow;
+	public GameObject lmb;
 
 	private bool grabbedEarly = true;
 
@@ -37,8 +39,8 @@ public class IntroCameraScript : MonoBehaviour {
 	{	
 //		print (bigHasBeen.taunted);
 
-		print (wall1.lap + " " + wall2.lap + " " + wall3.lap + " " + wall4.lap);
-		bool lapComplete = wall1.lap && wall2.lap && wall3.lap && wall4.lap;
+//		print (wall1.lap + " " + wall2.lap + " " + wall3.lap + " " + wall4.lap);
+		bool lapComplete = slink.LapComplete;
 
 		if (zooming)
 			Zoom();		// make this a function that gives different time values
@@ -58,6 +60,10 @@ public class IntroCameraScript : MonoBehaviour {
 			learnThrow.SetActive(true);
 			if (grabbedEarly) {
 				grabbedEarly = false;
+
+				Destroy(slink); // destroy first part of slink tutorial
+				lmb.SetActive(false);
+
 				learnThrow.GetComponent<LearnThrow>().TerminalGrabbedEarly();
 			} else if (!grabbedEarly) {
 				learnThrow.GetComponent<LearnThrow>().TerminalGrabbed();
@@ -84,7 +90,8 @@ public class IntroCameraScript : MonoBehaviour {
 		if (lapComplete || Input.GetKeyDown(KeyCode.Period)) 
 		{
 			ChangeTarget(posB);
-			wall1.lap = false;
+//			wall1.lap = false;
+			slink.LapComplete = false;
 			grabbedEarly = false;
 			// enable sam tutorial
 			samTutorial.SetActive(true);
@@ -105,9 +112,9 @@ public class IntroCameraScript : MonoBehaviour {
 	// zooms out
 	IEnumerator ChangeCam()
 	{
-		if (camera.orthographicSize < 4.84f) 
+		if (GetComponent<Camera>().orthographicSize < 4.84f) 
 		{
-			camera.orthographicSize += 0.03f;
+			GetComponent<Camera>().orthographicSize += 0.03f;
 			targetPos = posD;
 		} 
 		else 
@@ -129,12 +136,12 @@ public class IntroCameraScript : MonoBehaviour {
 	{
 		t += Time.deltaTime;
 		if (t < zoomTime)							// zoom in
-			camera.orthographicSize += 0.03f;
+			GetComponent<Camera>().orthographicSize += 0.03f;
 		if (t >= zoomTime) 							// zoom out
-			camera.orthographicSize -= 0.03f;
+			GetComponent<Camera>().orthographicSize -= 0.03f;
 		// has reached orthographicSize 1
 		// reset zooming and time, t
-		if (t > zoomTime && camera.orthographicSize <= zoomedIn)
+		if (t > zoomTime && GetComponent<Camera>().orthographicSize <= zoomedIn)
 		{
 			zooming = false;
 			t = 0;

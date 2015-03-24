@@ -52,7 +52,8 @@ public class Sam : MonoBehaviour
 	void Update ()
 	{
 		//check if grounded for jump handling
-		bool grounded = Physics2D.Linecast(this.transform.position, this.GroundDetector.transform.position, 1 << LayerMask.NameToLayer ("Ground"));
+		bool grounded = Physics2D.Linecast(this.transform.position, this.GroundDetector.transform.position, 1 << LayerMask.NameToLayer ("Ground")) 
+						|| Physics2D.Linecast(this.transform.position, this.GroundDetector.transform.position, 1 << LayerMask.NameToLayer ("SpecialGround"));
 
 //		print (grounded);
 		//make sure grounded on feet
@@ -75,7 +76,7 @@ public class Sam : MonoBehaviour
 			}
 			// update string
 			else if (command.Length < 10) {
-				cursor.renderer.enabled = true;
+				cursor.GetComponent<Renderer>().enabled = true;
 				bubble.GetComponent<SpriteRenderer>().sprite = normal;
 				command += c;
 			}
@@ -83,7 +84,7 @@ public class Sam : MonoBehaviour
 
 		// update cursor position
 		// need more info on this for fixing space
-		Bounds bounds = Text.renderer.bounds;
+		Bounds bounds = Text.GetComponent<Renderer>().bounds;
 		cursor.length = bounds.extents.x * 2;
 		Text.text = command;
 		if (jump && !grounded) 
@@ -98,11 +99,11 @@ public class Sam : MonoBehaviour
 		{
 			AudioSource.PlayClipAtPoint(jumpSound, transform.position);
 //			SoundEffectsHelper.Instance.MakeJumpSound();		// replace
-			this.rigidbody2D.AddForce(Vector2.up * JumpForce);
+			this.GetComponent<Rigidbody2D>().AddForce(Vector2.up * JumpForce);
 			this.jump = false;
 		}
 
-		Vector2 velocity = this.rigidbody2D.velocity;
+		Vector2 velocity = this.GetComponent<Rigidbody2D>().velocity;
 		if (stop)
 		{
 			velocity.x = 0;
@@ -121,7 +122,7 @@ public class Sam : MonoBehaviour
 			velocity.x = -1 * sideSpeed;
 		}
 
-		this.rigidbody2D.velocity = velocity;
+		this.GetComponent<Rigidbody2D>().velocity = velocity;
 
 	}
 
@@ -135,7 +136,7 @@ public class Sam : MonoBehaviour
 
 
 	void taunt(){
-		cursor.renderer.enabled=false;
+		cursor.GetComponent<Renderer>().enabled=false;
 
 		if (tauntCounter == 0)
 			bubble.GetComponent<SpriteRenderer> ().sprite = taunt1;

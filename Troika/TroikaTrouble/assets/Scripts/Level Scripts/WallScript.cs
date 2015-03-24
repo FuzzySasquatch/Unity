@@ -8,6 +8,8 @@ public class WallScript : MonoBehaviour {
 	public GameObject parent;
 	public GameObject arms;
 	private bool raging = false;
+
+	public AudioClip woodBreak;
 	 
 	void Update () {
 //		if (fly)
@@ -18,9 +20,10 @@ public class WallScript : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) 
 	{
 		if (other.tag == "BigArms" && raging) {
-			this.rigidbody2D.isKinematic = false;
+			this.GetComponent<Rigidbody2D>().isKinematic = false;
+//			AudioSource.PlayClipAtPoint(woodBreak, transform.position);
 //			StartCoroutine(WallFly());
-			gameObject.rigidbody2D.AddForce(new Vector2(Random.Range(-force, force), Random.Range(-force, force)));
+			gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-force, force), Random.Range(-force, force)));
 			StartCoroutine(WallFly());
 		}
 	}
@@ -29,8 +32,8 @@ public class WallScript : MonoBehaviour {
 	{
 //		fly = true;
 		yield return new WaitForSeconds(waitDuration);
-		parent.collider2D.enabled = false;
-		this.collider2D.enabled = false;
+		parent.GetComponent<Collider2D>().enabled = false;
+		this.GetComponent<Collider2D>().enabled = false;
 		//Destroy(parent);
 //		Destroy(gameObject);
 //		fly = false;

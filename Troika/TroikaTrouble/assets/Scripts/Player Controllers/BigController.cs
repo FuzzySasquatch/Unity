@@ -19,6 +19,7 @@ public class BigController : MonoBehaviour
 		// left stick is centered
 		if (h == 0)
 		{
+//			Debug.Log(h);
 			right = false;
 			left = false;
 		}
@@ -64,9 +65,9 @@ public class BigController : MonoBehaviour
 			// ... flip the player.
 			//Flip();
 		if (target) {
-			Vector2 position = target.rigidbody2D.position;
+			Vector2 position = target.GetComponent<Rigidbody2D>().position;
 			position.y -= 1.8f;
-			this.rigidbody2D.position = position;
+			this.GetComponent<Rigidbody2D>().position = position;
 		}
 
 	
